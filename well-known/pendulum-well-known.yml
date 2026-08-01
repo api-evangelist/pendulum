@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: live probes of https://pendulumlife.com/.well-known/*
+host: https://pendulumlife.com
+note: >-
+  pendulumlife.com is a Shopify-hosted direct-to-consumer store. The well-known
+  surface is provided by the Shopify commerce platform (customer-account OIDC +
+  Universal Commerce Protocol), not a first-party Pendulum developer API.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: pendulum-openid-configuration.json
+  note: Shopify customer-account OIDC discovery (issuer shopify.com/authentication)
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: pendulum-oauth-authorization-server.json
+  note: RFC 8414 metadata; same Shopify customer-account authorization server
+- path: /.well-known/ucp
+  status: 200
+  file: pendulum-ucp.json
+  note: Universal Commerce Protocol (ucp.dev) merchant profile; advertises hosted MCP shopping service
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

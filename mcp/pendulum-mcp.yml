@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+status: published
+source: https://pendulumlife.com/llms.txt
+note: >-
+  Pendulum's Shopify store publishes a hosted Universal Commerce Protocol (UCP,
+  ucp.dev) agent-commerce surface. The MCP endpoint is provided by the Shopify
+  platform (dev.ucp.shopping service), not a bespoke Pendulum developer server.
+  Checkout requires contemporaneous human/buyer approval; the endpoint is
+  rate-limited per IP (429 backoff). Tool list is documented in llms.txt and the
+  UCP shopping OpenRPC schema; a raw tools/list call requires an agent profile URI
+  (422 invalid_profile_url without one).
+server:
+  name: pendulum-ucp-shopping
+  protocol: Universal Commerce Protocol
+  ucp_version: '2026-04-08'
+  transport: http
+  url: https://pendulumlife.com/api/ucp/mcp
+  canonical_url: https://pendulum-therapeutics.myshopify.com/api/ucp/mcp
+  discovery: https://pendulumlife.com/.well-known/ucp
+  schema: https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json
+tools:
+- name: search_catalog
+  description: Search the store catalog for products matching a buyer's intent.
+  source: https://pendulumlife.com/llms.txt
+- name: create_cart
+  description: Create a cart and add desired items.
+  source: https://pendulumlife.com/llms.txt
+- name: create_checkout
+  description: Start the purchase/checkout flow.
+  source: https://pendulumlife.com/llms.txt
+- name: update_checkout
+  description: Set shipping address and shipping method on a checkout.
+  source: https://pendulumlife.com/llms.txt
+- name: complete_checkout
+  description: Finalize the purchase (buyer must approve payment).
+  source: https://pendulumlife.com/llms.txt

@@ -1,7 +1,16 @@
 aid: pendulum
 name: Pendulum
-description: Pendulum is a company surfaced as a portfolio company of dcvc and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Pendulum (Pendulum Therapeutics, pendulumlife.com) is a microbiome-management
+  and metabolic-health company that develops clinically validated probiotic
+  supplements built on novel, patented anaerobic microbial strains such as
+  Akkermansia muciniphila. Its consumer products - including Glucose Control,
+  Metabolic Daily, Akkermansia, and a GLP-1 probiotic - are formulated to fuel
+  and maintain the gut lining, support immunity, relieve gas and bloating, and
+  help keep blood glucose in a healthy range, differentiated by double-blind,
+  placebo-controlled clinical trials rather than off-the-shelf probiotic blends.
+  Pendulum is a direct-to-consumer health and supplement brand and is a portfolio
+  company of DCVC; it does not currently publish a public developer API surface.
 url: https://raw.githubusercontent.com/api-evangelist/pendulum/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +18,57 @@ x-backed-by:
 - dcvc
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://pendulumlife.com/favicon.ico
 tags:
 - Company
+- Health
+- Microbiome
+- Probiotics
+- Metabolic Health
+- Consumer Health
+- Supplements
+- Direct to Consumer
 apis: []
+common:
+- type: DomainSecurity
+  url: security/pendulum-domain-security.yml
+- type: Website
+  url: https://pendulumlife.com
+- type: WellKnown
+  url: well-known/pendulum-well-known.yml
+- type: MCPServer
+  name: Pendulum store UCP commerce (Shopify)
+  url: mcp/pendulum-mcp.yml
+- type: LLMsTxt
+  url: llms/pendulum-llms.txt
+- type: AgentSkill
+  name: Shop the Pendulum store as an agent (UCP)
+  url: skills/_index.yml
+- type: PrivacyPolicy
+  url: https://pendulumlife.com/policies/privacy-policy
+- type: TermsOfService
+  url: https://pendulumlife.com/policies/terms-of-service
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1

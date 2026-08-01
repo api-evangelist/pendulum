@@ -1,0 +1,13 @@
+generated: '2026-07-20'
+method: searched
+source: https://pendulumlife.com/agents.md
+note: >-
+  Provider-published agent-instructions document (agents.md), saved verbatim.
+  Shopify/UCP-generated; describes read-only browsing and the agent-commerce
+  (UCP MCP) checkout flow for the pendulumlife.com store. Not grounded in a
+  first-party OpenAPI (Pendulum publishes no developer API).
+skills:
+- file: pendulum-agents.md
+  name: Shop the Pendulum store as an agent (UCP commerce)
+  source: https://pendulumlife.com/agents.md
+  operations: [search_catalog, create_cart, create_checkout, update_checkout, complete_checkout]
