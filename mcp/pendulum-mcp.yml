@@ -2,14 +2,11 @@ generated: '2026-07-20'
 method: searched
 status: published
 source: https://pendulumlife.com/llms.txt
-note: >-
-  Pendulum's Shopify store publishes a hosted Universal Commerce Protocol (UCP,
-  ucp.dev) agent-commerce surface. The MCP endpoint is provided by the Shopify
-  platform (dev.ucp.shopping service), not a bespoke Pendulum developer server.
-  Checkout requires contemporaneous human/buyer approval; the endpoint is
-  rate-limited per IP (429 backoff). Tool list is documented in llms.txt and the
-  UCP shopping OpenRPC schema; a raw tools/list call requires an agent profile URI
-  (422 invalid_profile_url without one).
+note: Pendulum's Shopify store publishes a hosted Universal Commerce Protocol (UCP, ucp.dev) agent-commerce
+  surface. The MCP endpoint is provided by the Shopify platform (dev.ucp.shopping service), not a bespoke
+  Pendulum developer server. Checkout requires contemporaneous human/buyer approval; the endpoint is rate-limited
+  per IP (429 backoff). Tool list is documented in llms.txt and the UCP shopping OpenRPC schema; a raw
+  tools/list call requires an agent profile URI (422 invalid_profile_url without one).
 server:
   name: pendulum-ucp-shopping
   protocol: Universal Commerce Protocol
@@ -35,3 +32,11 @@ tools:
 - name: complete_checkout
   description: Finalize the purchase (buyer must approve payment).
   source: https://pendulumlife.com/llms.txt
+deployment:
+  mode: remote
+  endpoint: https://pendulumlife.com/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
